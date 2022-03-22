@@ -8,6 +8,10 @@ const blue_left = document.getElementById("blue_left");
 const modal_container = document.getElementById("modal_container");
 const close_ = document.getElementById("close");
 const audio = document.getElementById("audio");
+//colores anaranjado y azul para las bolas
+const orange = "#e5432b";
+const blue = "#007ca8";
+
 // Botón inicial - Ventana modal
 modal_container.classList.add("show");
 close_.addEventListener("click", ()=>{
@@ -45,12 +49,12 @@ document.addEventListener("keypress", function(e){
         let end = new Date().getTime();
         let tiempo = end - start;
         if(times.length == 0) {
-            times.push([tiempo, "orange"]);
-            times_nuevo.push([tiempo, "orange"]);
+            times.push([tiempo, orange]);
+            times_nuevo.push([tiempo, orange]);
         }
         else{
-            times_nuevo.push([tiempo - times[times.length - 1][0], "orange"]);
-            times.push([tiempo, "orange"]);
+            times_nuevo.push([tiempo - times[times.length - 1][0], orange]);
+            times.push([tiempo, orange]);
             console.log(times_nuevo);   
         }
         let final = JSON.stringify(times_nuevo)
@@ -65,12 +69,12 @@ document.addEventListener("keypress", function(e){
         let end = new Date().getTime();
         let tiempo = end - start;
         if(times.length == 0) {
-            times.push([tiempo, "orange"]);
-            times_nuevo.push([tiempo, "orange"]);
+            times.push([tiempo, orange]);
+            times_nuevo.push([tiempo, orange]);
         }
         else{
-            times_nuevo.push([tiempo - times[times.length - 1][0], "orange"]);
-            times.push([tiempo, "orange"]);
+            times_nuevo.push([tiempo - times[times.length - 1][0], orange]);
+            times.push([tiempo, orange]);
             console.log(times_nuevo);   
         }
         let final = JSON.stringify(times_nuevo)
@@ -85,12 +89,12 @@ document.addEventListener("keypress", function(e){
         let end = new Date().getTime();
         let tiempo = end - start;
         if(times.length == 0) {
-            times.push([tiempo, "blue"]);
-            times_nuevo.push([tiempo, "blue"]);
+            times.push([tiempo, blue]);
+            times_nuevo.push([tiempo, blue]);
         }
         else{
-            times_nuevo.push([tiempo - times[times.length - 1][0], "blue"]);
-            times.push([tiempo, "blue"]);
+            times_nuevo.push([tiempo - times[times.length - 1][0], blue]);
+            times.push([tiempo, blue]);
             console.log(times_nuevo);   
         }
         let final = JSON.stringify(times_nuevo)
@@ -105,12 +109,12 @@ document.addEventListener("keypress", function(e){
         let end = new Date().getTime();
         let tiempo = end - start;
         if(times.length == 0) {
-            times.push([tiempo, "blue"]);
-            times_nuevo.push([tiempo, "blue"]);
+            times.push([tiempo, blue]);
+            times_nuevo.push([tiempo, blue]);
         }
         else{
-            times_nuevo.push([tiempo - times[times.length - 1][0], "blue"]);
-            times.push([tiempo, "blue"]);
+            times_nuevo.push([tiempo - times[times.length - 1][0], blue]);
+            times.push([tiempo, blue]);
             console.log(times_nuevo);   
         }
         let final = JSON.stringify(times_nuevo)
