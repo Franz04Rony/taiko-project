@@ -22,6 +22,7 @@
 .orange_left{
     position: relative;
     left: -190px;
+    visibility: hidden;
 }
 .orange_right{
     -moz-transform: scale(-1, -1);
@@ -30,6 +31,7 @@
     transform: scale(-1, -1);
     position: relative;
     left: -193px;
+    visibility: hidden;
 }
 .blue_left{
     -moz-transform: scale(-1, -1);
@@ -38,10 +40,12 @@
     transform: scale(-1, -1);
     position: relative;
     left: -380px;
+    visibility: hidden;
 }
 .blue_right{
     position: relative;
     left: -386px;
+    visibility: hidden;
 }
 .hit_circle{
     position: relative;
@@ -68,9 +72,60 @@
     opacity: 0.4;
     
 }
+
 .bar{
     width: 100vw;
     height: 203px;
     opacity: 0.9;
     z-index: -1;
 }
+.canvas{
+    border: 2px solid greenyellow;
+    position: absolute;
+    top: 7px;
+    left: 180px;
+}
+
+/* modal container */
+.modal-container{
+    display: flex;
+    background-color: rgba(0,0,0,0.45);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal{
+    background-color: rgb(241, 240, 240);
+    border-radius: 20px;
+    display: grid;
+    padding: 25px;
+}
+.flexbox{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.reglas{
+    color: hsl(229, 25%, 31%);
+    font-size: 20px;
+    font-weight: 600;
+}
+.close{
+    border: none;
+    cursor: pointer;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+
