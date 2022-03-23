@@ -7,11 +7,15 @@ const blue_left = document.getElementById("blue_left");
 const modal_container = document.getElementById("modal_container");
 const close_ = document.getElementById("close");
 const audio = document.getElementById("audio");
-// Botón inicial - Ventana modal
-modal_container.classList.add("show");
+const score_number = document.getElementById("score");
+const combo_number = document.getElementById("combo");
+
 const orange = "#e5432b";
 const blue = "#007ca8";
-
+let score = 0;
+let combo = 0;
+// Botón inicial - Ventana modal
+modal_container.classList.add("show");
 close_.addEventListener("click", ()=>{
     modal_container.classList.remove("show")
     animate();
@@ -53,6 +57,9 @@ class Circle{
         ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2, false)
         ctx.fillStyle = this.color
         ctx.fill()
+        ctx.stroke()
+        ctx.strokeStyle = 'white'
+        ctx.lineWidth = 4
     }
     update(){
         this.draw();
@@ -116,24 +123,64 @@ function animate(){
         hit.update();
     })
     circles.forEach((circle, index) => {
+        console.log(index)
         circle.update();
         hits.forEach((hit, hitIndex) =>{
             dist = Math.hypot(circle.x - 67, 0);
-            if(dist <= 30 && hit.color == circle.color){
-                setTimeout(()=>{
-                    circles.splice(index,1)
-                    hits.splice(hitIndex,1)
-                },0)
-            }   
+            if(hit === hits[index]){
+                //obtiene 300
+                if(dist < 20 && hit.color == circle.color){
+                    setTimeout(()=>{
+                        circles.splice(index,1)
+                        hits.splice(hitIndex,1)
+                        combo = combo + 1;
+                        score = score + 300 + 4*combo;
+                        score_number.textContent = score;
+                        if(combo > 9 && combo < 100){
+                            combo_number.style.transform = "translateX(-8px)"
+                        }
+                        if(combo >99 && combo < 1000){
+                            combo_number.style.transform = "translateX(-16px)"
+                        }
+                        combo_number.textContent = combo;
+
+                    },0)
+                }
+                //obtiene 100
+                if(dist <=40 && dist >=20 && hit.color == circle.color){
+                    setTimeout(()=>{
+                        circles.splice(index,1)
+                        hits.splice(hitIndex,1)
+                        combo = combo + 1;
+                        score = score + 100 + 4*combo;
+                        score_number.textContent = score;
+                        if(combo > 9 && combo < 100){
+                            combo_number.style.transform = "translateX(-8px)"
+                        }
+                        if(combo >99 && combo < 1000){
+                            combo_number.style.transform = "translateX(-16px)"
+                        }
+                        combo_number.textContent = combo;
+                    },0)
+                }
+            }  
         })
+        //fuera de pantalla a la izquierda
         if(circle.x < -10){
             setTimeout(()=>{
                 circles.splice(index,1)
+                if(combo > 9 && combo < 100){
+                    combo_number.style.transform = "translateX(0px)"
+                }
+                if(combo >99 && combo < 1000){
+                    combo_number.style.transform = "translateX(0px)"
+                }
+                combo = 0;
+                combo_number.textContent = combo;
             })
         }
+        
     });
-    console.log(circles)
-    
 }
 document.addEventListener("keydown", function(e){
     if(e.key == "n"){
@@ -142,7 +189,7 @@ document.addEventListener("keydown", function(e){
         let timerId1 = setTimeout(function(){
             orange_rigth.style.visibility = "hidden"
             hits.pop()
-        }, 100);
+        }, 50);
          
     }
     if(e.key == "b"){
@@ -151,7 +198,7 @@ document.addEventListener("keydown", function(e){
         let timerId1 = setTimeout(function(){
             orange_left.style.visibility = "hidden"
             hits.pop()
-        }, 100);  
+        }, 50);  
     }
     if(e.key == "m"){
         hits.push(new Hit(87, 97, 75, blue));
@@ -159,7 +206,7 @@ document.addEventListener("keydown", function(e){
         let timerId1 = setTimeout(function(){
             blue_right.style.visibility = "hidden"
             hits.pop()
-        }, 100);  
+        }, 50);  
     }
     if(e.key == "v"){
         hits.push(new Hit(87, 97, 75, blue));
@@ -167,7 +214,7 @@ document.addEventListener("keydown", function(e){
         let timerId1 = setTimeout(function(){
             blue_left.style.visibility = "hidden";
             hits.pop();
-        }, 100);  
+        }, 50);  
     }
 });
 

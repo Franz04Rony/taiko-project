@@ -85,6 +85,22 @@
     top: 7px;
     left: 180px;
 }
+/* score */
+.score{
+    position: absolute;
+    top: -50px;
+    padding-left: 75px;
+    font-size: 30px;
+    color: aliceblue;
+}
+/* combo */
+.combo{
+    position: absolute;
+    top: 80px;
+    padding-left: 85px;
+    font-size: 30px;
+    color: aliceblue;
+}
 
 /* modal container */
 .modal-container{
