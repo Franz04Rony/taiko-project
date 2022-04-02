@@ -6,6 +6,7 @@
     <title>Taiko F</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/menu_final.css">
 </head>
 <body>
     <audio id="audio">
@@ -73,6 +74,26 @@
             </div>
         </div>
     </div>
+    <div class="modal-container" id="menu-end-container">
+        <div class="modal">
+            <nav class="nav-end">
+                <span class="results">Resultado</span>
+                <span class="name_song-end" id="name_song-end"></span>
+                <button class="b-close" id="b-close"><img src="images/icon-close.svg" alt="close-icon" class="close"></button>
+            </nav>
+            <div class="flexbox-end">
+                <img src="" alt="imagen de la cancion" class="image" id="image_end">
+                <div class="scores">
+                    <div class="score-final letras_score">Score: <span class="numeros-final" id="score-final"></span></div>
+                    <div class="perfect letras_score">Perfect: <span class="numeros-final" id="perfect"></span></div>
+                    <div class="combo-final letras_score">MAX Combo: <span class="numeros-final" id="combo-final"></span></div>
+                    <div class="ok letras_score">OK: <span class="numeros-final" id="ok"></span></div>
+                    <div class="bad letras_score">BAD: <span class="numeros-final" id="bad"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
     
     <script src="main.js"></script>
 </body>
