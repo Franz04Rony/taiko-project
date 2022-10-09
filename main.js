@@ -64,12 +64,12 @@ let bad_number = 0;
 const d = "Dificultad: ";
 //a llenar por una nueva cancion
 let nombres = ["Nadie te preguntó", "Reflect", "Charles", "Charles", "The desolation of spring", "Dragostea din tei"];
-let images = ["images/nadie_te_pregunto.webp", "images/reflect.jpg", "images/charles1.jpg", "images/charles.jpg", "images/the_desolation_of_spring.jpg", "images/dragostea_din_tei.jpg"];
+let images = ["images/nadie-te-pregunto2.png", "images/reflect2.png", "images/charles1.png", "images/charles.png", "images/lagtrain.png", "images/dragostea_din_tei.png"];
 let dif = ["Muzukashi", "Muzukasi", "Oni", "Kantan", "wtf", "Kantan"];
 let songs = ["songs/nadie_te_pregunto.mp3", "songs/reflect.mp3", "songs/charles.mp3", "songs/charles.mp3", "songs/the_desolation_of_spring.mp3", "songs/dragostea_din_tei.mp3"];
 let times =[0,1,2,3,4,5];
-let delays = [3581, 8970, 4020, 5178, 3901, 9000]
-let start = [0,0,0,0,1000,0] //retraso para que empiece la canción
+let delays = [3581, 8970, 4020, 5178, 3901, 9000];
+let start = [0,0,0,0,1000,0]; //retraso para que empiece la canción
 //////
 let actual_song = [];
 // Botón inicial - Ventana modal
