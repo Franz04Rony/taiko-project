@@ -43,6 +43,13 @@ window.addEventListener('load', ()=>{
     //Tamaño del canvas al cargar
     canvas.height = 185;
     canvas.width = window.innerWidth;
+    let fotoss = ["images/nadie-te-pregunto2.png", "images/reflect2.png", "images/charles1.png", "images/charles.png", "images/lagtrain.png", "images/dragostea_din_tei.png"];
+    const fotos1 = [];
+    fotoss.forEach((foto, i)=>{
+        fotos1.push(new Image());
+        fotos1[i].src = fotoss[i]
+    })
+    console.log(fotoss)
     
 });
 
