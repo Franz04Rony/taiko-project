@@ -49,7 +49,7 @@ window.addEventListener('load', ()=>{
         fotos1.push(new Image());
         fotos1[i].src = fotoss[i]
     })
-    console.log(fotoss)
+    console.log("fotos1: ",fotos1)
     
 });
 
@@ -89,7 +89,7 @@ jugar.addEventListener("click", ()=>{
     menuhit.play();
     console.log(times)
     fondo.src = images[1];
-    source.src = songs[1];
+    //source.src = songs[1];
     actual_song = taiko_songs[times[1]].slice();
     console.log(actual_song);
     console.log(taiko_songs[times[1]])
@@ -158,7 +158,9 @@ b_left.addEventListener("click",()=>{
     dif_song1.textContent = d + dif[0];
     dif_song2.textContent = d + dif[1];
     dif_song3.textContent = d + dif[2];
-
+    source.src = songs[1];
+    audio.load();
+    audio.play();
 })
 
 b_right.addEventListener("click",()=>{
@@ -201,6 +203,9 @@ b_right.addEventListener("click",()=>{
     dif_song1.textContent = d + dif[0];
     dif_song2.textContent = d + dif[1];
     dif_song3.textContent = d + dif[2];
+    source.src = songs[1];
+    audio.load();
+    audio.play();
 
 })
 ///////Fin de carrusel
@@ -430,6 +435,11 @@ document.addEventListener("keydown", function(e){
 });
 
 b_close.addEventListener("click", ()=>{
+    const fotos1 = [];
+    images.forEach((foto, i)=>{
+        fotos1.push(new Image());
+        fotos1[i].src = images[i]
+    })
     menu_end_container.classList.remove("show")
     modal_container.classList.add("show");
 })
